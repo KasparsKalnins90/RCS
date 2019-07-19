@@ -1,0 +1,56 @@
+﻿@model FirstWebApplication.Models.CinemaModel
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>@(String.IsNullOrEmpty(Model.Name) ? "New cinema" : Model.Name)</h2>
+@using (Html.BeginForm("Edit", "Cinema", FormMethod.Post, new { @class = "form-horizontal" }))
+
+
+{
+
+    <Div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+    </Div>
+    <Div class="form-group">
+        @Html.LabelFor(m => m.Address, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+        </div>
+
+    </Div>
+    <div class="form-group">
+
+        <div class="col-sm-offset-2 col-sm-10">
+            @Html.HiddenFor(m => m.Id)
+            <input type="submit" value="Saglabāt" class="btn btn-default">
+
+        </div>
+    </div>
+    
+
+}
+
+    <table class="table table-striped">
+        <tr>
+        <td>Nosaukums</td>
+        <td>Gads</td>
+        </tr>
+
+        @foreach (var movie in Model.Movies)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td> @movie.Year</td>
+            </tr>
+        }
+
+    </table>
+
+
+
+
+
+

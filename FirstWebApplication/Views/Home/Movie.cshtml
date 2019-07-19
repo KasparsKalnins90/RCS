@@ -1,0 +1,25 @@
+﻿@model FirstWebApplication.Models.MovieReservationModel
+@{
+    ViewBag.Title = "Movie reservation";
+}
+
+<h2>@Model.movie.Title (@Model.movie.Year)</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Laiks</th>
+        <th>Cena</th>
+    </tr>
+
+    @foreach (var session in Model.Sessions)
+    {
+        <tr>
+            <td>@session.Time</td>
+            <td>@session.Price</td>
+            @if (Session.Get() != null)
+            {
+                <td>@Html.ActionLink("Pievienot grozam", "Buy", new { id = session.Id })</td>
+            }
+        </tr>
+    }
+</table>

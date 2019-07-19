@@ -1,0 +1,63 @@
+﻿@model FirstWebApplication.Models.MovieModel
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>@(Model.Title ?? "Pievienot Jaunu")</h2>
+@using (Html.BeginForm("Edit", "Movie", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+        @Html.ValidationSummary()
+
+    <Div class="form-group">
+        @Html.LabelFor(m => m.Title, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        </div>
+    </Div>
+    <Div class="form-group">
+        @Html.LabelFor(m => m.Year, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Year, new { @class = "form-control" })
+        </div>
+
+    </Div>
+    <Div class="form-group">
+        @Html.LabelFor(m => m.CinemaId, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.CinemaId, new { @class = "form-control" })
+        </div>
+    </Div>
+    <div class="form-group">
+
+        <div class="col-sm-offset-2 col-sm-10">
+            @Html.HiddenFor(m => m.Id)
+            <input type="submit" value="Saglabāt" class="btn btn-default">
+
+        </div>
+        
+    </div>
+
+}
+@if (Model.Cinema != null)
+{
+    <table class=" table table-striped">
+        <tr>
+        <td>Nosaukums</td>
+        <td>Adrese</td>
+        </tr>
+
+       
+        
+            <tr>
+                <td> @Model.Cinema.Name</td>
+                <td> @Model.Cinema.Address</td>
+            </tr>
+        
+
+    </table>
+}
+
+
+
+
+
+

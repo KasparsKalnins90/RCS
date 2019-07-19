@@ -1,0 +1,31 @@
+﻿
+
+@model List<FirstWebApplication.Models.MovieModel>
+@{
+    ViewBag.Title = "Filmu saraksts";
+}
+
+<h2>Filmas</h2>
+<div>
+    @Html.ActionLink("Pievienot jaunu", "Edit", "Movie", null, new { @class = "btn btn-primary" })
+</div>
+<table class=" table table-striped">
+    <tr>
+        <th>Nosaukums</th>
+        <th>Gads</th>
+        <th>Kinoteātra Id</th>
+        
+    </tr>
+    @foreach (var Movie in Model)
+    {
+    <tr>
+
+        <td>@Html.ActionLink(Movie.Title, "Edit", "Movie", new { id = Movie.Id }, null)</td>
+        <td>@Movie.Year</td>
+        <td>@Movie.CinemaId</td>
+        <td>@Html.ActionLink("Dzēst", "Delete", "Movie", new { id = Movie.Id }, null)</td>
+
+    </tr>
+    }
+</table>
+

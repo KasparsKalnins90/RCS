@@ -1,0 +1,42 @@
+﻿@model FirstWebApplication.Models.MovieSessionModel
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "MovieSession", FormMethod.Post, new { @class = "form-horizontal" }))
+
+
+{
+
+    <Div class="form-group">
+        @Html.LabelFor(m => m.Time, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
+        </div>
+    </Div>
+    <Div class="form-group">
+        @Html.LabelFor(m => m.Price, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+        </div>
+
+    </Div>
+    <Div class="form-group">
+        @Html.LabelFor(m => m.MovieId, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.MovieId, new { @class = "form-control" })
+        </div>
+
+    </Div>
+    <div class="form-group">
+
+        <div class="col-sm-offset-2 col-sm-10">
+            @Html.HiddenFor(m => m.Id)
+            <input type="submit" value="Saglabāt" class="btn btn-default">
+
+        </div>
+    </div>
+
+
+}

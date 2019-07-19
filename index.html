@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <title>Mana pirmā lapa</title>
+    <!--
+        komentārs
+    -->
+    <link rel=" stylesheet" href="Style.css" /><!-- style sheet var atrast šajā failā-->
+    <script src="Script.js"></script>
+
+</head>
+<body>
+    <div class="container">
+    <h1>Virsraksts</h1>
+    <h2>Mazāks virsraksts</h2>
+
+    <p>
+        Teksta rindkopa
+        <br />
+        Otrā rinda.
+        <br />
+        Trešā rinda. <!-- ja nebūtu br, kas ir line break, tad viss būtu vienā rindā-->
+    </p>
+
+    <div>
+        <!-- izmanto, lai atdalītu elementus (piemēram, ja gribam attēlot pogas atsevišķi vienu no otras izmanto šo)-->
+        <b>bold</b> jeb <strong>strong</strong>
+    </div>
+    <div class="block2">
+        <u>Underline</u>
+    </div>
+    <div>
+        <i> Italic</i> jeb <em>em</em>
+    </div>
+
+    <table border="1">
+        <tr>
+            <th>Kolona 1</th>
+            <th>Kolona 2</th>
+        </tr>
+        <tr>
+            <td align="center"> dati</td>
+            <td align="center"> dati</td>
+        </tr>
+        <tr>
+            <td> dati</td>
+            <td> dati</td>
+        </tr>
+    </table>
+
+    <a href="http://www.delfi.lv" target="_blank">delfi</a> <!-- a nozīmē anchor. target blank nozīmē, ka jaunā tabā atvērsies-->
+
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Check me out
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default" onclick="buttonClicked()">Submit </button>
+    </form>
+
+    <img width="200" src=" https://g3.delphi.lv/delfi-bootstrap/assets/svg/logos/internal/delfi.svg" />
+         </div>
+</body>
+</html>
